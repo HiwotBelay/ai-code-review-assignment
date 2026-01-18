@@ -10,7 +10,7 @@ Approximate time spent: ~75 minutes
 
 ## 1) Code Review Findings
 ### Critical bugs
-- The function divides by the total number of orders (`count = len(orders)`) instead of the number of non-cancelled orders. This causes incorrect averages when there are cancelled orders. For example, with 3 orders where 2 are active ($100, $200) and 1 is cancelled, it calculates (100+200)/3 = $100 instead of the correct (100+200)/2 = $150.
+- The function divides by the total number of orders (`count = len(orders)`) instead of the number of non-cancelled orders. This causes incorrect averages when there are cancelled orders. For example, with 3 orders where 2 are active (100, 200) and 1 is cancelled, it calculates (100+200)/3 = 100 instead of the correct (100+200)/2 = 150.
 
 ### Edge cases & risks
 - Empty orders list will cause ZeroDivisionError when dividing by count
